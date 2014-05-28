@@ -1,0 +1,16 @@
+{
+  "name": "gis2Server",
+  "subdomain": "gis2Server",
+  "author": "Muly Oved mulyoved@gmail",
+  "scripts": {
+    "start": "server.js"
+  },
+  "version": "0.0.3-1",
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "dependencies": {
+    "socket.io": "latest",
+    "node-static": "latest"
+  }
+}
