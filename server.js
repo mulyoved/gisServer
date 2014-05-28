@@ -13,8 +13,8 @@ function handler (request, response) {
 	}).resume();
 }
 
-// delete to see more logs from sockets
-io.set('log level', 1);
+
+
 var allKnownLocations = {};
 var ttls = {};
 var cleanExpitedLocations = function() {
@@ -36,8 +36,15 @@ var cleanExpitedLocations = function() {
     }
 };
 
+io.configure(function () {
+    // delete to see more logs from sockets
+    io.set('log level', 1);
+    io.set("transports", ["xhr-polling"]);
+    io.set("polling duration", 10);
+});
+
 io.sockets.on('connection', function (socket) {
-    console.log('client connected', socket);
+    console.log('client connected');
     socket.send(socket.id);
 
     socket.on('disconnect', function () {
