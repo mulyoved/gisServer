@@ -1,7 +1,7 @@
 var http = require('http');
 var Static = require('node-static');
 var app = http.createServer(handler);
-var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(app, { origins: '*:*' });
 var port = process.env.PORT || 8080;
 
 
@@ -12,9 +12,6 @@ function handler (request, response) {
 		files.serve(request, response);
 	}).resume();
 }
-
-
-
 
 var allKnownLocations = {};
 var ttls = {};
