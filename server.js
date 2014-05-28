@@ -15,6 +15,7 @@ function handler (request, response) {
 
 
 
+
 var allKnownLocations = {};
 var ttls = {};
 var cleanExpitedLocations = function() {
